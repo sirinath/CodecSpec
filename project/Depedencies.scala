@@ -6,7 +6,7 @@ import sbt._
 
 object Dependencies {
   // Versions
-  lazy val scalaVersion = "2.11.6"
+  lazy val scalaVersion = "2.11.7"
 
   // Libraries
   lazy val scodecBits = "org.scodec" %% "scodec-bits" % "1.0.7"
@@ -17,9 +17,10 @@ object Dependencies {
   lazy val scodecSpire = "org.scodec" %% "scodec-spire" % "0.2.0"
   lazy val scalaz =  "org.scalaz" %% "scalaz-core" % "7.1.3"
   lazy val shapeless =  "com.chuusai" %% "shapeless" % "2.2.3"
+  lazy val spire = "org.spire-math" %% "spire" % "0.10.1"
 
   // Projects
-  lazy val dependencies = Seq(scodecBits, scodecCore, scodecScalaz, scodecStream, scodecProtocols, scodecSpire, scalaz, shapeless)
+  lazy val dependencies = Seq(scodecBits, scodecCore, scodecScalaz, scodecStream, scodecProtocols, scodecSpire, scalaz, shapeless, spire)
 
   lazy val resolvers = Seq(
     DefaultMavenRepository,

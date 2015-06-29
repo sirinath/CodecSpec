@@ -1,6 +1,6 @@
 import sbt.Keys._
 
-lazy val CodeSpec = (project in file("CodeSpec")).
+lazy val CodeSpec = (project in file(".")).
   settings(
     name := "CodecSpec",
     organization := "com.sakrio",
