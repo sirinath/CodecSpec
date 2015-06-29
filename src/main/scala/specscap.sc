@@ -3,17 +3,17 @@ import shapeless.{HList, HNil}
 object Nest {
   import shapeless.syntax.singleton._
 
-  def apply[L <: HList](tag: Symbol, hl: L) = (tag ->> (hl)) :: HNil
+  def apply[L <: HList](tag: String, hl: L) = (tag ->> (hl)) :: HNil
 }
 
 object ActionSeq {
-  def  apply(seq: HList) = Nest('ActionSeq,  seq)
+  def  apply(seq: HList) = Nest("T",  seq)
 }
 
 
 val a = ActionSeq(1 ::  "a" :: HNil)
 
-a('ActionSeq)
+a("T")
 
 import shapeless.HNil
 import shapeless.record._
@@ -24,5 +24,7 @@ def f() = {
   (1 :: "a" :: HNil)
 }
 
-val b = ('a ->> f()) :: HNil
-b('a)
+val t = "a"
+
+val b = ( t ->> f()) :: HNil
+b("a")
