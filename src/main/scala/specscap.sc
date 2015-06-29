@@ -3,7 +3,7 @@ import shapeless.{HList, HNil}
 object Nest {
   import shapeless.syntax.singleton._
 
-  def apply[L <: HList](tag: String, hl: L) = (tag ->> (hl)) :: HNil
+  def apply(tag: String, hl: HList) = (tag ->> (hl)) :: HNil
 }
 
 object ActionSeq {
