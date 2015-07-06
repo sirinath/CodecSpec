@@ -1,19 +1,26 @@
 
+trait State
 
-case class State[A](value: A)
-case class Event[A](value: A)
-case class Action()
-class Builder {
-  def apply(name: String): Builder = this
+trait Alphabet
+trait Input extends Alphabet
+trait Output extends Alphabet
+
+case class StateVal[A](value: A) extends State
+
+case class InputVal[A](value: A) extends Input
+case class OutputVal[A](value: A) extends Output
+
+object State {
+  def apply[A](value: A): State = StateVal(value)
 }
 
-class Base[A <: Base[A]](name: String) {
-  def apply(config: => Unit)(implicit builder: Builder): Unit = {
-    builder(name)
-    config
-  }
-}
+type States[A <: State] = Set[A]
 
-class FSM extends Base[FSM](name = "FSM")
+type Inputs[A <: Input] = Set[A]
 
-implicit val b: Builder = new Builder
+type Outputs[A <: Output] = Set[A]
+
+type Transition[S <: State, I <: Input, O <: Output] = (S, I) => (S, O)
+
+type FSM[S <: State, I <: Input, O <: Output] = (States[S], S, Inputs[I], Outputs[O], Transition[S, I, O])
+
