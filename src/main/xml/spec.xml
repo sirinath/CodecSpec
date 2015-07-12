@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<fix>
+    <header>
+        <field tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" validTags="" supportedVersions="" />
+    </header>
+    <body>
+        <message tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" valid="" versions="">
+            <field tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" validTags="" supportedVersions="" direction="" />
+            <responces>
+                <responce messages="">
+                    <copy receivedMessageField="" omitIfAbsent="" responceMessageField=""/>
+                </responce>
+                <responce messages="">
+                    <if receivedMessageField="" contition="" value=""/>
+                </responce>
+                <responce messages="">
+                    <if receivedMessage="" sentMessage=""/>
+                </responce>
+                <responce messages="">
+                    <if receivedMessageField="" contition="" sentMessageField=""/>
+                </responce>
+            </responces>
+        </message>
+    </body>
+    <trailer>
+        <field tag="" name="" abbrivation="" required="" length="" type="" union="" validTags="" supportedVersions="" />
+    </trailer>
+    <components>
+        <component name="" category="" repeating="" type="" >
+            <field tag="" pos="" name="" abbrivation="" required="" requiredInFirstItemOnly="" eqaulsFirstIfPresent="" requiredIfGreaterThanZero="" requiredIfGreaterThanOne="" length="" type="" union="" validTags="" supportedVersions="" />
+        </component>
+    </components>
+    <implimentation name="" entiry="">
+        <custom>
+            <body>
+                <message tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" valid="" versions="">
+                    <field tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" validTags="" supportedVersions="" direction="" />
+                </message>
+            </body>
+            <components>
+                <component name="" category="" repeating="" type="" >
+                    <field tag="" pos="" name="" abbrivation="" required="" length="" type="" union="" validTags="" supportedVersions="" />
+                </component>
+            </components>
+        </custom>
+        <partial>
+            <field id="" tags="" />
+        </partial>
+        <unimplemented>
+            <fields list="" />
+            <field id="" tags="" />
+        </unimplemented>
+    </implimentation>
+</fix>
